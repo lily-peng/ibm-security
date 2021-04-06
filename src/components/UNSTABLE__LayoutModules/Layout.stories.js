@@ -14,7 +14,7 @@ import {
 
 import { layout03, layout04 } from '@carbon/layout';
 
-import { Grid, Row, Column } from 'carbon-components-react';
+import { Row, Column } from 'carbon-components-react';
 import React from 'react';
 
 import { disableCentered, patterns } from '../../../.storybook';
@@ -69,14 +69,98 @@ export default {
       <>
         <UIShell />
 
-        <Grid>{story()}</Grid>
+        <div className="bx--grid">{story()}</div>
       </>
     ),
   ],
 };
 
+export const Lily = () => (
+  <>
+    <div className="bx--grid">
+      <div className="bx--row">
+        <div className="bx--col">1/4</div>
+        <div className="bx--col">1/4</div>
+        <div className="bx--col">1/4</div>
+        <div className="bx--col">1/4</div>
+      </div>
+    </div>
+
+    <TitleBarModule title="Summary" />
+
+    <div className="bx--row">
+      <div className="bx--col">
+        <DescriptionModule>
+          {({ getLayoutProps }) => (
+            <p {...getLayoutProps()}>
+              BadFlick is a backdoor that is usually seen being distributed
+              using exploited word documents. It does not have any persistence
+              to survive reboot, but it is capable of opening a reverse shell
+              connection to its C2 server where it can download and execute
+              possibly other malware.
+            </p>
+          )}
+        </DescriptionModule>
+      </div>
+
+      <div className="bx--col">
+        <DescriptionListModule>
+          <TypeLayout>
+            <TypeLayoutBody>
+              <TypeLayoutRow>
+                <TypeLayoutCell>Created by</TypeLayoutCell>
+                <TypeLayoutCell>X-Force IRIS</TypeLayoutCell>
+              </TypeLayoutRow>
+              <TypeLayoutRow>
+                <TypeLayoutCell>Last updated</TypeLayoutCell>
+                <TypeLayoutCell>Jul 14 2019</TypeLayoutCell>
+              </TypeLayoutRow>
+            </TypeLayoutBody>
+          </TypeLayout>
+        </DescriptionListModule>
+      </div>
+    </div>
+
+    <div className="bx--row">
+      <div className="bx--col">
+        <ICAModule>
+          {() => (
+            <>
+              <TitleBarModule element="h4" title="Indicators" />
+
+              <div className="bx--row">
+                <div className="bx--col">
+                  <ICA label="Malware" value={11} />
+                </div>
+                <div className="bx--col">
+                  <ICA label="IPs" value={8} />
+                </div>
+                <div className="bx--col">
+                  <ICA label="URLs" value={9} />
+                </div>
+                <div className="bx--col">
+                  <ICA label="VULs" value={1} />
+                </div>
+              </div>
+            </>
+          )}
+        </ICAModule>
+      </div>
+    </div>
+  </>
+);
+
 export const Detail = () => (
   <>
+    <div className="bx--grid">
+      <div className="bx--row">
+        <div className="bx--col">1/4</div>
+        <div className="bx--col">1/4</div>
+        <div className="bx--col">1/4</div>
+        <div className="bx--col">1/4</div>
+      </div>
+    </div>
+
     <TitleBarModule title="Summary" />
 
     <Row>
